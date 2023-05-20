@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select, input[type="submit"] {
+            padding: 8px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <form action="{% url 'password'%}">
+            <label for="length">Password Length:</label>
+            <select name="length" id="length">
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+            </select>
+
+            <label for="include-special">
+                <input type="checkbox" id="include-special" name="include-special"> Include Special Characters
+            </label>
+
+            <label for="include-lower-upper">
+                <input type="checkbox" id="include-lower-upper" name="include-lower-upper"> Include Lowercase and Uppercase Characters
+            </label>
+
+            <label for="number">
+                <input type="checkbox" id="number" name="number"> Include Number Characters
+            </label>
+
+            <input type="submit" value="Generate Password">
+        </form>
+    </div>
+</body>
+</html>
